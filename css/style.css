@@ -1,0 +1,43 @@
+body{
+	background-color:gray;
+}
+#puzzle_container{
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+#puzzle_container div {
+  position:absolute;
+  /*width: 135px;*/
+  border: 1px solid lightgray;
+  /*height: 135px;*/ //todo calculate dynamicaly
+  background-size: 600px;
+}
+
+#puzzle_frame{
+  margin: 50px auto;
+  padding: 20px;
+  position: relative;
+  background-color: lightgray;
+}
+
+.gradient-bg {
+   /* fallback/image non-cover color */
+   background-color: gray; 
+
+   /* Safari 4+, Chrome 1-9 */
+   background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from(lightgray), to(gray));
+
+   /* Safari 5.1+, Mobile Safari, Chrome 10+ */
+   background-image: -webkit-linear-gradient(top, lightgray, gray); 
+
+   /* Firefox 3.6+ */
+   background-image: -moz-linear-gradient(top, lightgray, gray);
+
+   /* IE 10+ */
+   background-image: -ms-linear-gradient(top, lightgray, gray);
+
+   /* Opera 11.10+ */
+   background-image: -o-linear-gradient(top, lightgray, gray);
+}

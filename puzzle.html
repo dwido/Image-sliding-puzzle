@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link href="css/style.css" type="text/css" rel="stylesheet">
+	<script type="text/javascript" src="js/jquery-1.7.1.js"></script>
+	<script type="text/javascript" src="js/jquery.ui.core.js"></script>
+	<script type="text/javascript" src="js/jquery.ui.widget.js"></script>
+	<script type="text/javascript" src="js/jquery.ui.mouse.js"></script>
+	<script type="text/javascript" src="js/jquery.ui.draggable.js"></script>
+    <script type="text/javascript" src="js/whenReady.js"></script>
+    <script type="text/javascript" src="js/drag.js"></script>
+    <script type="text/javascript" src="js/puzzle.js"></script>
+    <script>
+      whenReady(function(){ //todo replace with whenready.js
+		$('input,select').change(function(){initializePuzzle();});
+        var puzzle;
+		function initializePuzzle(){
+			$('#puzzle_container').empty();
+			$('#puzzle_frame').css({'width': $('#puzzle_size').val(), 'height': $('#puzzle_size').val()});
+			puzzle = new Puzzle (parseInt($('#dimension').val()), $('#puzzle_container')[0], $('#image_src').val());
+		}
+		initializePuzzle();
+      })
+	  
+    </script>
+  </head>
+  <body>
+	<span>Split By<span><input type="text" id="dimension" value="4"/>
+	<span>Size<span><input type="text" id="puzzle_size" value="540"/>
+	<span>Image<span><select id="image_src"><option value="../images/globe.jpg">Globe</option><option value="../images/mamamalka.jpg">Mother Malka</option></select>
+	<div id="puzzle_frame" class="gradient-bg" ontouchmovex="touchMove(event);">
+		<div id="puzzle_container"></div>
+	</div>
+	
+	<div onmousedown="drag(this,event,{'axis':'y'});" ontouchstart="drag(this,event);" style="position:absolute; top:50px;left:300px;height:30;width:100px;background-color:pink">dwido</div>
+	<div id="console" style="position:absolute;top:20px;left:20px;">Console</div>
+  </body>
+</html>
