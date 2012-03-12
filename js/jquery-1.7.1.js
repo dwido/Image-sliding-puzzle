@@ -8349,7 +8349,7 @@ jQuery.fn.extend({
 		function doAnimation() {
 			// XXX 'this' does not always have a nodeName when running the
 			// test suite
-
+			log('location top:' + this.style.top + ' left:' + this.style.left);
 			if ( optall.queue === false ) {
 				jQuery._mark( this );
 			}
