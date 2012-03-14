@@ -196,6 +196,9 @@ function Matrix (dimension) {
   }
 }
 
+
+// Helper Functions
+
 function getElementPosition(e) {
   var x = 0, y = 0;
   while(e != null) {
